@@ -1,15 +1,8 @@
-// i18n.ts
-import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
+// src/lib/i18n.ts
+import sv from '@/messages/sv.json';
+import en from '@/messages/en.json';
 
-export default getRequestConfig(async ({ locale }) => {
-  // Enkel koll - bara 'en' eller 'sv' är tillåtna
-    if (locale !== 'en' && locale !== 'sv') {
-    notFound();
-    }
-
-    return {
-    locale: locale,
-    messages: (await import(`./locales/${locale}.json`)).default
-    };
-});
+export const translations = {
+  sv,
+  en,
+};

@@ -1,13 +1,13 @@
-// src/app/[locale]/page.tsx
-import { useTranslations } from 'next-intl';
+'use client';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function Home() {
-    const t = useTranslations('Home');
+    const t = useTranslation();
 
     return (
-        <div className="p-6">
-            <h1 className="text-3xl font-bold mb-4">{t('welcome')}</h1>
-            <p className="text-lg">{t('description')}</p>
-        </div>
+        <main className="p-6">
+        <h1 className="text-3xl font-bold mb-4">{t.Home.welcome}</h1>
+        <p className="text-lg">{t.Home.description}</p>
+        </main>
     );
 }

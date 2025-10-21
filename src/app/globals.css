@@ -24,3 +24,58 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* === Design system === */
+
+/* == Navbar == */
+
+.header-wrapper {
+  @apply sticky top-0 z-50 w-full bg-white shadow-md;
+}
+
+.mobile-menu {
+  @apply fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out;
+}
+
+.nav-link {
+  @apply text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors;
+}
+
+.lang-button {
+  @apply flex items-center space-x-2 text-xl font-bold text-gray-800 hover:opacity-80 transition;
+}
+
+/* Typografi */
+.h1 {
+  @apply text-4xl font-bold tracking-tight text-gray-900;
+}
+.h2 {
+  @apply text-2xl font-semibold text-gray-800;
+}
+.body-text {
+  @apply text-base leading-relaxed text-gray-700;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-semibold transition-colors;
+}
+.btn.primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+.btn.secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition;
+}
+
+/* Layout helpers */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.section {
+  @apply py-12 sm:py-16;
+}

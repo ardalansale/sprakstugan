@@ -1,125 +1,105 @@
-// components/Header.tsx
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const t = useTranslations('Header');
-    const router = useRouter();
-    const pathname = usePathname();
+    const t = useTranslation();
+    const { setLocale } = useLanguage();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
-
-    const switchLanguage = (locale: string) => {
-        const newPath = pathname.replace(/^\/(en|sv)/, `/${locale}`);
-        router.push(newPath);
+    const switchLanguage = (locale: 'sv' | 'en') => {
+        setLocale(locale);
         closeMenu();
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-white shadow-md">
+        // ====== HEADER WRAPPER ======
+        <header className="header-wrapper">
             <div className="px-4 py-3">
-                <div className="flex items-center justify-between">
-                    <Link href="/" className="text-xl font-bold text-gray-800">
-                        {t('logo')}
+                {/* ====== NAVBAR (logo + hamburgare) ====== */}
+                <div className="flex items-center justify-between relative z-[60]">
+    {/* LOGO */}
+                    <Link href="/" className="flex items-center space-x-2">
+                        <Logo className="w-24 h-auto text-blue-600" />
                     </Link>
 
-                    <button 
-                        onClick={toggleMenu}
-                        className="p-2"
-                    >
-                        {isMenuOpen ? (
-                            <span className="text-2xl">✕</span>
-                        ) : (
-                            <span className="text-2xl">☰</span>
-                        )}
+                    {/* HAMBURGER / CLOSE ICON */}
+                    <button onClick={toggleMenu} className="text-black">
+                        {isMenuOpen ? <X size={42} /> : <Menu size={42} />}
                     </button>
                 </div>
 
-                {isMenuOpen && (
-                    <div className="fixed top-0 left-0 w-full h-full bg-white z-50">
-                        <div className="p-6">
-                            <div className="flex justify-end mb-8">
-                                <button 
-                                    onClick={closeMenu}
-                                    className="text-2xl p-2"
-                                >
-                                    ✕
-                                </button>
-                            </div>
+                {/* ====== SLIDE-IN MENU ====== */}
+                <div
+                    className={`${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} mobile-menu`}
+                >
+                    {/* MENY-INNEHÅLL CENTRERAT */}
+                    <div className="p-6 flex flex-col items-center justify-center h-full">
+                        {/* ====== NAVIGATIONSLÄNKAR ====== */}
+                        <nav className="flex flex-col space-y-6 items-center text-center">
+                            <Link href="/" className="nav-link" onClick={closeMenu}>
+                                {t.Header.landingPage}
+                            </Link>
+                            <Link href="/sok-aktiviteter" className="nav-link" onClick={closeMenu}>
+                                {t.Header.searchActivities}
+                            </Link>
+                            <Link href="/om-oss" className="nav-link" onClick={closeMenu}>
+                                {t.Header.about}
+                            </Link>
+                            <Link href="/kontakta-oss" className="nav-link" onClick={closeMenu}>
+                                {t.Header.contact}
+                            </Link>
+                            <Link href="/nyhetsbrev" className="nav-link" onClick={closeMenu}>
+                                {t.Header.newsletter}
+                            </Link>
+                            <Link href="/jobba-med-oss" className="nav-link" onClick={closeMenu}>
+                                {t.Header.careers}
+                            </Link>
 
-                            <nav className="flex flex-col space-y-6">
-                                <Link 
-                                    href="/om-oss" 
-                                    className="text-3xl font-bold text-gray-800"
-                                    onClick={closeMenu}
-                                >
-                                    {t('about')}
-                                </Link>
-                                
-                                <Link 
-                                    href="/kontakta-oss" 
-                                    className="text-3xl font-bold text-gray-800"
-                                    onClick={closeMenu}
-                                >
-                                    {t('contact')}
-                                </Link>
-                                
-                                <Link 
-                                    href="/nyhetsbrev" 
-                                    className="text-3xl font-bold text-gray-800"
-                                    onClick={closeMenu}
-                                >
-                                    {t('newsletter')}
-                                </Link>
-                                
-                                <Link 
-                                    href="/jobba-med-oss" 
-                                    className="text-3xl font-bold text-gray-800"
-                                    onClick={closeMenu}
-                                >
-                                    {t('careers')}
-                                </Link>
-                                
-                                <div className="pt-4 border-t border-gray-200">
-                                    <p className="text-2xl font-bold mb-4">{t('changeLanguage')}</p>
-                                    <div className="flex space-x-4">
-                                        <button 
-                                            onClick={() => switchLanguage('sv')}
-                                            className="text-xl font-bold text-gray-800"
-                                        >
-                                            Svenska
-                                        </button>
-                                        <button 
-                                            onClick={() => switchLanguage('en')}
-                                            className="text-xl font-bold text-gray-800"
-                                        >
-                                            English
-                                        </button>
-                                    </div>
+                            {/* ====== SPRÅKVAL MED FLAGGOR ====== */}
+                            <div className="pt-4 border-t border-gray-200 text-black w-full">
+                                <p className="text-2xl font-bold mb-4">
+                                    {t.Header.changeLanguage}
+                                </p>
+                                <div className="flex space-x-6 justify-center">
+                                    <button
+                                        onClick={() => switchLanguage('sv')}
+                                        className="lang-button"
+                                    >
+                                        <Image
+                                            src="/sv-flag.svg"
+                                            alt="Svenska"
+                                            width={24}
+                                            height={24}
+                                        />
+                                        <span>Svenska</span>
+                                    </button>
+                                    <button
+                                        onClick={() => switchLanguage('en')}
+                                        className="lang-button"
+                                    >
+                                        <Image
+                                            src="/uk-flag.svg"
+                                            alt="English"
+                                            width={24}
+                                            height={24}
+                                        />
+                                        <span>English</span>
+                                    </button>
                                 </div>
-                                
-                                <Link 
-                                    href="/sok-aktiviteter" 
-                                    className="text-3xl font-bold text-gray-800"
-                                    onClick={closeMenu}
-                                >
-                                    {t('searchActivities')}
-                                </Link>
-                            </nav>
-                        </div>
+                            </div>
+                        </nav>
                     </div>
-                )}
+                </div>
             </div>
         </header>
     );

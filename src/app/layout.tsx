@@ -1,10 +1,9 @@
-// src/app/[locale]/layout.tsx
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { LanguageProvider } from '@/context/LanguageContext';
 import Header from '@/components/Header';
-import '../globals.css'; // eller '@/app/globals.css' beroende på struktur
+import './globals.css';
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -16,23 +15,14 @@ export const metadata: Metadata = {
   description: "Lär dig svenska på ett enkelt sätt",
 };
 
-export default async function RootLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode;
-  params: { locale?: string };
-}) {
-  const locale = params.locale ?? 'sv'; // fallback till svenska
-  const messages = await getMessages(locale);
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale}>
+    <html lang="sv">
       <body className={`${openSans.variable} font-sans antialiased`}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <LanguageProvider>
           <Header />
           {children}
-        </NextIntlClientProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

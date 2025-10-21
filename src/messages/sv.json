@@ -1,13 +1,13 @@
 {
     "Header": {
-        "logo": "Språkstugan",
         "openMenu": "Öppna meny",
         "closeMenu": "Stäng meny",
+        "landingPage": "Startsida",
         "about": "Om oss",
         "contact": "Kontakta oss", 
         "newsletter": "Nyhetsbrev",
         "careers": "Jobba med oss",
-        "changeLanguage": "Byte av språk",
+        "changeLanguage": "Byt språk",
         "searchActivities": "Sök på aktiviteter"
     },
     "Home": {
