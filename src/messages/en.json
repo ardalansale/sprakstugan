@@ -1,0 +1,17 @@
+{
+    "Header": {
+        "logo": "Language Cottage", 
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "about": "About us",
+        "contact": "Contact us",
+        "newsletter": "Newsletter",
+        "careers": "Work with us",
+        "changeLanguage": "Change language",
+        "searchActivities": "Search activities"
+    },
+    "Home": {
+        "welcome": "Welcome to Language Cottage!",
+        "description": "Here you learn Swedish in an easy way."
+    }
+}

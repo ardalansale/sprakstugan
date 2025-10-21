@@ -1,0 +1,17 @@
+{
+    "Header": {
+        "logo": "Språkstugan",
+        "openMenu": "Öppna meny",
+        "closeMenu": "Stäng meny",
+        "about": "Om oss",
+        "contact": "Kontakta oss", 
+        "newsletter": "Nyhetsbrev",
+        "careers": "Jobba med oss",
+        "changeLanguage": "Byte av språk",
+        "searchActivities": "Sök på aktiviteter"
+    },
+    "Home": {
+        "welcome": "Välkommen till Språkstugan!",
+        "description": "Här lär du dig svenska på ett enkelt sätt."
+    }
+}
