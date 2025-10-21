@@ -24,7 +24,7 @@ const Header = () => {
     return (
         // ====== HEADER WRAPPER ======
         <header className="header-wrapper">
-            <div className="px-4 py-3">
+            <div className="container py-4">
                 {/* ====== NAVBAR (logo + hamburgare) ====== */}
                 <div className="flex items-center justify-between relative z-[60]">
     {/* LOGO */}

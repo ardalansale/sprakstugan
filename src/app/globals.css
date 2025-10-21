@@ -12,12 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: bg-white ;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
@@ -27,7 +27,16 @@ body {
 
 /* === Design system === */
 
-/* == Navbar == */
+/* Layout */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.section {
+  @apply py-12 sm:py-16;
+}
+
+
+/* Navbar */
 
 .header-wrapper {
   @apply sticky top-0 z-50 w-full bg-white shadow-md;
@@ -70,12 +79,4 @@ body {
 /* Cards */
 .card {
   @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition;
-}
-
-/* Layout helpers */
-.container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-.section {
-  @apply py-12 sm:py-16;
 }
