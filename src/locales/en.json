@@ -58,24 +58,29 @@
         "activity1": {
             "title": "Swedish Coffee Chat - Beginners",
             "category": "Language Café",
-            "description": "Meet others learning Swedish. We drink coffee and chat together in a relaxed environment."
+            "description": "Meet others learning Swedish. We drink coffee and chat together in a relaxed environment.",
+            "price": "Free"
+
         },
         "activity4": {
             "title": "Conversation Group Stockholm",
             "category": "Conversation",
-            "description": "Practice speaking Swedish in a friendly group. All levels welcome!"
+            "description": "Practice speaking Swedish in a friendly group. All levels welcome!",
+            "price": "Free"
         }
     },
     "uppsala": {
         "activity2": {
             "title": "Swedish Meeting - Uppsala",
             "category": "Meeting",
-            "description": "Informal meetup for language learners. We discuss daily situations and learn together."
+            "description": "Informal meetup for language learners. We discuss daily situations and learn together.",
+            "price": "Free"
         },
         "activity3": {
             "title": "Language Exchange Uppsala",
             "category": "Exchange",
-            "description": "Fun language meetup with activities and games. Perfect for practicing and having fun!"
+            "description": "Fun language meetup with activities and games. Perfect for practicing and having fun!",
+            "price": "Free"
         }
     }
 }

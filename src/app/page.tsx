@@ -19,10 +19,16 @@ interface Activity {
     date: string;
 }
 
-interface ActivityWithTranslations extends Omit<Activity, 'titleKey' | 'categoryKey' | 'descriptionKey'> {
+interface ActivityWithTranslations {
+    id: number;
     title: string;
     category: string;
     description: string;
+    location: string;
+    locationUrl: string;
+    image: string;
+    date: string;
+    price: string;
 }
 
 const CITIES = [
@@ -59,17 +65,25 @@ export default function HomePage() {
 
                 for (const [city, cityActivities] of Object.entries(rawActivities)) {
                     activitiesWithTranslations[city] = (cityActivities as Activity[]).map((activity) => {
-                        const translation = (messages as any)[city]?.[`activity${activity.id}`] || {
-                            title: 'Untitled',
-                            category: 'Uncategorized',
-                            description: 'No description',
-                        };
+                        // Hämta city-baserad data från messages
+                        const cityData = (messages as any)[city];
+                        const activityKey = `activity${activity.id}`;
+                        const translation = cityData?.[activityKey];
+
+                        if (!translation) {
+                            console.warn(`Missing translation for ${city}/${activityKey}`);
+                        }
 
                         return {
-                            ...activity,
-                            title: translation.title,
-                            category: translation.category,
-                            description: translation.description,
+                            id: activity.id,
+                            title: translation?.title || 'Untitled',
+                            category: translation?.category || 'Uncategorized',
+                            description: translation?.description || 'No description',
+                            price: translation?.price || 'N/A',
+                            location: activity.location,
+                            locationUrl: activity.locationUrl,
+                            image: activity.image,
+                            date: activity.date,
                         };
                     });
                 }

@@ -58,24 +58,32 @@
         "activity1": {
             "title": "Språkcafé - Svenska för nybörjare",
             "category": "Språkcafé",
-            "description": "Träffa andra som lär sig svenska. Vi drinker kaffe och pratar tillsammans i en avslappnad miljö."
+            "description": "Träffa andra som lär sig svenska. Vi drinker kaffe och pratar tillsammans i en avslappnad miljö.",
+            "price": "Gratis"
+
         },
         "activity4": {
             "title": "Konversationsgrupp Stockholm",
             "category": "Konversation",
-            "description": "Öva på att prata svenska i en vänlig grupp. Alla nivåer välkomna!"
+            "description": "Öva på att prata svenska i en vänlig grupp. Alla nivåer välkomna!",
+            "price": "Gratis"
+
         }
     },
     "uppsala": {
         "activity2": {
             "title": "Svenska möte - Uppsala",
             "category": "Möte",
-            "description": "Informell träff för språkinlärare. Vi diskuterar dagliga situationer och lär oss tillsammans."
+            "description": "Informell träff för språkinlärare. Vi diskuterar dagliga situationer och lär oss tillsammans.",
+            "price": "Gratis"
+
         },
         "activity3": {
             "title": "Språkträff Uppsala",
             "category": "Träff",
-            "description": "Rolig språkträff med aktiviteter och spel. Perfekt för att öva och ha kul samtidigt!"
+            "description": "Rolig språkträff med aktiviteter och spel. Perfekt för att öva och ha kul samtidigt!",
+            "price": "Gratis"
+
         }
     }
 }

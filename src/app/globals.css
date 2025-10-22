@@ -98,7 +98,8 @@ body {
 
 /* Activity Card specific */
 .activity-card {
-  @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition;
+  @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition flex flex-col;
+  min-height: 580px;
 }
 
 .activity-card-image {
@@ -106,7 +107,7 @@ body {
 }
 
 .activity-card-content {
-  @apply p-4;
+  @apply p-6 flex flex-col flex-1;
 }
 
 .activity-tag {
