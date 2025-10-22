@@ -32,7 +32,9 @@ interface Activity {
         const fetchActivities = async () => {
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:3001/activities');
+            const response = await fetch('/data/db.json');
+            const raw = await response.json();
+            setActivities(raw.activities);
             if (!response.ok) throw new Error('Failed to fetch activities');
             const data = await response.json();
             setActivities(data);
@@ -130,5 +132,5 @@ interface Activity {
             </div>
         </section>
         </main>
-  );
+    );
 }

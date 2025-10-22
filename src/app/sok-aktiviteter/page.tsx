@@ -29,17 +29,22 @@ interface Activity {
 
     // Hämta aktiviteter från JSON Server
     useEffect(() => {
-        const fetchActivities = async () => {
+        const fetchActivities = async (retries = 3) => {
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:3001/activities');
-            if (!response.ok) throw new Error('Failed to fetch activities');
+            // Byt till Next.js API-route
+            const response = await fetch('/api/activities');
+            if (!response.ok) throw new Error(`HTTP status ${response.status}`);
             const data = await response.json();
             setActivities(data);
             setError(null);
         } catch (err) {
+            if (retries > 0) {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                return fetchActivities(retries - 1);
+            }
             setError('Kunde inte ladda aktiviteter. Försök igen senare.');
-            console.error(err);
+            console.error('Fetch error:', err);
         } finally {
             setLoading(false);
         }

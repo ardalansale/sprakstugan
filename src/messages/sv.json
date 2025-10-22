@@ -33,5 +33,23 @@
     },
     "ActivityCard": {
         "location": "Plats"
+    },
+    "Footer": {
+        "newsletterTitle": "Nyhetsbrevet Språkstugan",
+        "newsletterDescription": "Anmäl dig till vårt nyhetsbrev och få tips på aktiviteter varje vecka!",
+        "newsletterCTA": "Anmäl dig här",
+        "aboutTitle": "Om Språkstugan",
+        "aboutLink": "Om oss",
+        "contactLink": "Kontakta oss",
+        "careersLink": "Jobba med oss",
+        "activitiesTitle": "Aktiviteter",
+        "allActivities": "Alla aktiviteter",
+        "stockholmActivities": "Aktiviteter Stockholm",
+        "uppsalaActivities": "Aktiviteter Uppsala",
+        "policyTitle": "Policy",
+        "privacyPolicy": "Integritetspolicy",
+        "termsLink": "Användarvillkor",
+        "followTitle": "Följ oss",
+        "copyright": "© 2024 Språkstugan. Alla rättigheter förbehållna."
     }
 }

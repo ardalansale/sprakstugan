@@ -33,5 +33,23 @@
     },
     "ActivityCard": {
         "location": "Location"
+    },
+    "Footer": {
+        "newsletterTitle": "Språkstugan Newsletter",
+        "newsletterDescription": "Subscribe to our newsletter and get weekly tips on activities!",
+        "newsletterCTA": "Sign up here",
+        "aboutTitle": "About Språkstugan",
+        "aboutLink": "About us",
+        "contactLink": "Contact us",
+        "careersLink": "Work with us",
+        "activitiesTitle": "Activities",
+        "allActivities": "All activities",
+        "stockholmActivities": "Stockholm activities",
+        "uppsalaActivities": "Uppsala activities",
+        "policyTitle": "Policy",
+        "privacyPolicy": "Privacy policy",
+        "termsLink": "Terms of use",
+        "followTitle": "Follow us",
+        "copyright": "© 2024 Språkstugan. All rights reserved."
     }
 }
