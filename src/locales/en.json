@@ -50,6 +50,32 @@
         "privacyPolicy": "Privacy policy",
         "termsLink": "Terms of use",
         "followTitle": "Follow us",
-        "copyright": "© 2024 Språkstugan. All rights reserved."
+        "copyright": "© 2025 Språkstugan. All rights reserved."
+    },
+
+    
+    "stockholm": {
+        "activity1": {
+            "title": "Swedish Coffee Chat - Beginners",
+            "category": "Language Café",
+            "description": "Meet others learning Swedish. We drink coffee and chat together in a relaxed environment."
+        },
+        "activity4": {
+            "title": "Conversation Group Stockholm",
+            "category": "Conversation",
+            "description": "Practice speaking Swedish in a friendly group. All levels welcome!"
+        }
+    },
+    "uppsala": {
+        "activity2": {
+            "title": "Swedish Meeting - Uppsala",
+            "category": "Meeting",
+            "description": "Informal meetup for language learners. We discuss daily situations and learn together."
+        },
+        "activity3": {
+            "title": "Language Exchange Uppsala",
+            "category": "Exchange",
+            "description": "Fun language meetup with activities and games. Perfect for practicing and having fun!"
+        }
     }
 }

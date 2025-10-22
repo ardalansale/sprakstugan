@@ -9,13 +9,10 @@ export default function Footer() {
 
     return (
         <footer className="bg-gray-900 text-white mt-16">
-
-        {/* Footer */}
         <div className="container py-12">
-            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Kolumn 1: Om Språkstugan */}
-            <div>
+            <div className="text-center sm:text-left">
                 <h4 className="font-bold text-lg mb-4">
                 {t.Footer?.aboutTitle || 'Om Språkstugan'}
                 </h4>
@@ -39,7 +36,7 @@ export default function Footer() {
             </div>
 
             {/* Kolumn 2: Aktiviteter */}
-            <div>
+            <div className="text-center sm:text-left">
                 <h4 className="font-bold text-lg mb-4">
                 {t.Footer?.activitiesTitle || 'Aktiviteter'}
                 </h4>
@@ -63,7 +60,7 @@ export default function Footer() {
             </div>
 
             {/* Kolumn 3: Policy */}
-            <div>
+            <div className="text-center sm:text-left">
                 <h4 className="font-bold text-lg mb-4">
                 {t.Footer?.policyTitle || 'Policy'}
                 </h4>
@@ -82,11 +79,11 @@ export default function Footer() {
             </div>
 
             {/* Kolumn 4: Sociala medier */}
-            <div>
+            <div className="text-center sm:text-left">
                 <h4 className="font-bold text-lg mb-4">
                 {t.Footer?.followTitle || 'Följ oss'}
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex justify-center sm:justify-start gap-4">
                 <a
                     href="https://instagram.com"
                     target="_blank"

@@ -1,0 +1,46 @@
+{
+    "stockholm": [
+        {
+            "id": 1,
+            "titleKey": "stockholm.activity1.title",
+            "categoryKey": "stockholm.activity1.category",
+            "descriptionKey": "stockholm.activity1.description",
+            "location": "Hornstull Bibliotek",
+            "locationUrl": "https://maps.google.com/?q=Hornstull+Bibliotek+Stockholm",
+            "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=300&fit=crop",
+            "date": "24 okt, 14:00"
+        },
+        {
+            "id": 4,
+            "titleKey": "stockholm.activity4.title",
+            "categoryKey": "stockholm.activity4.category",
+            "descriptionKey": "stockholm.activity4.description",
+            "location": "Stureplan Café",
+            "locationUrl": "https://maps.google.com/?q=Stureplan+Stockholm",
+            "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=300&fit=crop",
+            "date": "27 okt, 15:00"
+        }
+    ],
+    "uppsala": [
+        {
+            "id": 2,
+            "titleKey": "uppsala.activity2.title",
+            "categoryKey": "uppsala.activity2.category",
+            "descriptionKey": "uppsala.activity2.description",
+            "location": "Uppsala Bibliotek",
+            "locationUrl": "https://maps.google.com/?q=Uppsala+Bibliotek",
+            "image": "https://images.unsplash.com/photo-1543269865-cbdf26effbad?w=500&h=300&fit=crop",
+            "date": "25 okt, 18:00"
+        },
+        {
+            "id": 3,
+            "titleKey": "uppsala.activity3.title",
+            "categoryKey": "uppsala.activity3.category",
+            "descriptionKey": "uppsala.activity3.description",
+            "location": "Uppsala Stadsbibliotek",
+            "locationUrl": "https://maps.google.com/?q=Uppsala+Stadsbibliotek",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+            "date": "26 okt, 19:00"
+        }
+    ]
+}

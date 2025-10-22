@@ -5,132 +5,155 @@ import { useTranslation } from '@/hooks/useTranslation';
 import Hero from '@/components/Hero';
 import ActivityCard from '@/components/ActivityCard';
 import Link from 'next/link';
+import svMessages from '@/locales/sv.json';
+import enMessages from '@/locales/en.json';
 
 interface Activity {
     id: number;
-    title: string;
-    category: string;
-    description: string;
+    titleKey: string;
+    categoryKey: string;
+    descriptionKey: string;
     location: string;
     locationUrl: string;
     image: string;
     date: string;
-    city: string;
-    }
+}
 
-    const CITIES = ['Stockholm', 'Uppsala'];
+interface ActivityWithTranslations extends Omit<Activity, 'titleKey' | 'categoryKey' | 'descriptionKey'> {
+    title: string;
+    category: string;
+    description: string;
+}
 
-    export default function HomePage() {
+const CITIES = [
+    { key: 'stockholm', label: 'Stockholm' },
+    { key: 'uppsala', label: 'Uppsala' },
+];
+
+export default function HomePage() {
     const t = useTranslation();
-    const [activities, setActivities] = useState<Activity[]>([]);
-    const [selectedCity, setSelectedCity] = useState('Stockholm');
+    const [activities, setActivities] = useState<Record<string, ActivityWithTranslations[]>>({});
+    const [selectedCity, setSelectedCity] = useState('stockholm');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Hämta aktiviteter från JSON Server
     useEffect(() => {
         const fetchActivities = async () => {
-        try {
-            setLoading(true);
-            const response = await fetch('/data/db.json');
-            const raw = await response.json();
-            setActivities(raw.activities);
-            if (!response.ok) throw new Error('Failed to fetch activities');
-            const data = await response.json();
-            setActivities(data);
-            setError(null);
-        } catch (err) {
-            setError('Kunde inte ladda aktiviteter. Försök igen senare.');
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
+            try {
+                setLoading(true);
+                setError(null);
+
+                // Hämta aktiviteter
+                const activitiesResponse = await fetch('/data/db.json');
+                if (!activitiesResponse.ok) {
+                    throw new Error(`Failed to fetch activities: ${activitiesResponse.status}`);
+                }
+                const rawActivities = await activitiesResponse.json();
+
+                // Detektera språk baserat på useTranslation hook
+                const isSwedish = t?.Header?.openMenu === 'Öppna meny';
+                const messages = isSwedish ? svMessages : enMessages;
+
+                // Lägg till översättningar till aktiviteterna
+                const activitiesWithTranslations: Record<string, ActivityWithTranslations[]> = {};
+
+                for (const [city, cityActivities] of Object.entries(rawActivities)) {
+                    activitiesWithTranslations[city] = (cityActivities as Activity[]).map((activity) => {
+                        const translation = (messages as any)[city]?.[`activity${activity.id}`] || {
+                            title: 'Untitled',
+                            category: 'Uncategorized',
+                            description: 'No description',
+                        };
+
+                        return {
+                            ...activity,
+                            title: translation.title,
+                            category: translation.category,
+                            description: translation.description,
+                        };
+                    });
+                }
+
+                setActivities(activitiesWithTranslations);
+            } catch (err) {
+                setError(t?.Activities?.loadingError || 'Kunde inte ladda aktiviteter. Försök igen senare.');
+                console.error('Fetch error:', err);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchActivities();
-    }, []);
+    }, [t]);
 
-    // Filtrera aktiviteter efter stad och ta endast 8
-    const filteredActivities = activities
-        .filter((activity) => activity.city === selectedCity)
-        .slice(0, 8);
+    const filteredActivities = (activities[selectedCity] || []).slice(0, 8);
 
     return (
         <main>
-        {/* Hero */}
-        <Hero />
+            <Hero />
 
-        {/* Veckans aktiviteter */}
-        <section className="section">
-            <div className="container">
-            {/* Rubrik + stad info */}
-            <div className="mb-8">
-                <h2 className="h2 mb-2">
-                {t.Home?.weeklyActivities || 'Veckans aktiviteter i'} {selectedCity}
-                </h2>
-                <p className="body-text text-gray-600">
-                {t.Home?.weeklyDescription || 'Träffa andra som lär sig svenska'}
-                </p>
-            </div>
+            <section className="section">
+                <div className="container">
+                    <div className="mb-8">
+                        <h2 className="h2 mb-2">
+                            {t.Home?.weeklyActivities || 'Veckans aktiviteter i'} {CITIES.find(c => c.key === selectedCity)?.label}
+                        </h2>
+                        <p className="body-text text-gray-600">
+                            {t.Home?.weeklyDescription || 'Träffa andra som lär sig svenska'}
+                        </p>
+                    </div>
 
-            {/* Stad Filter */}
-            <div className="mb-8 flex gap-3">
-                {CITIES.map((city) => (
-                <button
-                    key={city}
-                    onClick={() => setSelectedCity(city)}
-                    className={`filter-pill ${
-                    selectedCity === city ? 'active' : 'inactive'
-                    }`}
-                >
-                    {city}
-                </button>
-                ))}
-            </div>
-
-            {/* Error banner */}
-            {error && (
-                <div className="error-banner mb-8">
-                <p className="error-text">{error}</p>
-                </div>
-            )}
-
-            {/* Loading state */}
-            {loading && (
-                <div className="flex justify-center py-12">
-                <div className="loading-spinner"></div>
-                </div>
-            )}
-
-            {/* Activities grid */}
-            {!loading && !error && (
-                <>
-                {filteredActivities.length > 0 ? (
-                    <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        {filteredActivities.map((activity) => (
-                        <ActivityCard key={activity.id} {...activity} />
+                    <div className="mb-8 flex gap-3">
+                        {CITIES.map((city) => (
+                            <button
+                                key={city.key}
+                                onClick={() => setSelectedCity(city.key)}
+                                className={`filter-pill ${selectedCity === city.key ? 'active' : 'inactive'}`}
+                            >
+                                {city.label}
+                            </button>
                         ))}
                     </div>
 
-                    {/* Knapp för alla aktiviteter */}
-                    <div className="text-center">
-                        <Link href="/aktiviteter" className="btn primary">
-                        Se alla aktiviteter
-                        </Link>
-                    </div>
-                    </>
-                ) : (
-                    <div className="text-center py-12">
-                    <p className="body-text text-gray-500">
-                        Inga aktiviteter funna för {selectedCity} just nu.
-                    </p>
-                    </div>
-                )}
-                </>
-            )}
-            </div>
-        </section>
+                    {error && (
+                        <div className="error-banner mb-8">
+                            <p className="error-text">{error}</p>
+                        </div>
+                    )}
+
+                    {loading && (
+                        <div className="flex justify-center py-12">
+                            <div className="loading-spinner"></div>
+                        </div>
+                    )}
+
+                    {!loading && !error && (
+                        <>
+                            {filteredActivities.length > 0 ? (
+                                <>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                                        {filteredActivities.map((activity) => (
+                                            <ActivityCard key={activity.id} {...activity} />
+                                        ))}
+                                    </div>
+
+                                    <div className="text-center">
+                                        <Link href="/aktiviteter" className="btn primary">
+                                            {t.Home?.seeAllActivities || 'Se alla aktiviteter'}
+                                        </Link>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="text-center py-12">
+                                    <p className="body-text text-gray-500">
+                                        {t.Home?.noActivities || 'Inga aktiviteter funna för'} {CITIES.find(c => c.key === selectedCity)?.label} {t.Home?.rightNow || 'just nu.'}
+                                    </p>
+                                </div>
+                            )}
+                        </>
+                    )}
+                </div>
+            </section>
         </main>
     );
 }
