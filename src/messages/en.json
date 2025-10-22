@@ -10,19 +10,28 @@
         "changeLanguage": "Change language",
         "searchActivities": "Search activities"
     },
-    "Home": {
-        "welcome": "Welcome to Språkstugan",
-        "description": "Here you learn Swedish in an easy way."
-    },
     "Hero": {
-    "title": "Welcome to Language House",
-    "subtitle": "Learn Swedish in an easy and fun way. From basic words and phrases to daily conversations.",
-    "cta": "Start learning today",
-    "card1Title": "Learn new words",
-    "card1Description": "Build your vocabulary with interactive exercises and real examples.",
-    "card2Title": "Practice conversations",
-    "card2Description": "Practice practical situations you encounter in your daily life.",
-    "card3Title": "Quick progress",
-    "card3Description": "Short exercises that fit into your daily routine."
+        "title": "Welcome to Språkstugan",
+        "subtitle": "Learn Swedish in an easy and fun way. From basic words and phrases to daily conversations."
+    },
+    "Home": {
+        "weeklyActivities": "Weekly activities in",
+        "weeklyDescription": "Meet others learning Swedish",
+        "seeAllActivities": "See all activities",
+        "noActivities": "No activities found for",
+        "rightNow": "right now."
+    },
+    "Activities": {
+        "title": "All activities",
+        "description": "Find all language-related activities in",
+        "selectCity": "Select city:",
+        "searchPlaceholder": "Search activities...",
+        "searchError": "Could not load activities. Please try again later.",
+        "noActivitiesFound": "No activities found.",
+        "tryDifferentSearch": "Try a different search term.",
+        "loadingError": "Could not load activities. Please try again later."
+    },
+    "ActivityCard": {
+        "location": "Location"
     }
 }

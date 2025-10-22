@@ -2,27 +2,36 @@
     "Header": {
         "openMenu": "Öppna meny",
         "closeMenu": "Stäng meny",
-        "landingPage": "Startsida",
+        "landingPage": "Hem",
         "about": "Om oss",
-        "contact": "Kontakta oss", 
+        "contact": "Kontakta oss",
         "newsletter": "Nyhetsbrev",
         "careers": "Jobba med oss",
         "changeLanguage": "Byt språk",
-        "searchActivities": "Sök på aktiviteter"
-    },
-    "Home": {
-        "welcome": "Välkommen till Språkstugan!",
-        "description": "Här lär du dig svenska på ett enkelt sätt."
+        "searchActivities": "Sök aktiviteter"
     },
     "Hero": {
-    "title": "Välkommen till Språkstugan",
-    "subtitle": "Lär dig svenska på ett enkelt och roligt sätt. Från grundläggande ord och fraser till dagliga konversationer.",
-    "cta": "Börja lära dig idag",
-    "card1Title": "Lär dig nya ord",
-    "card1Description": "Bygga upp ditt ordförråd med interaktiva övningar och verkliga exempel.",
-    "card2Title": "Träna samtal",
-    "card2Description": "Öva på praktiska situationer som du möter i din dagliga liv.",
-    "card3Title": "Snabb framgång",
-    "card3Description": "Korta övningar som passar in i din dagliga rutin."
+        "title": "Välkommen till Språkstugan",
+        "subtitle": "Lär dig svenska på ett enkelt och roligt sätt. Från grundläggande ord och fraser till dagliga konversationer."
+    },
+    "Home": {
+        "weeklyActivities": "Veckans aktiviteter i",
+        "weeklyDescription": "Träffa andra som lär sig svenska",
+        "seeAllActivities": "Se alla aktiviteter",
+        "noActivities": "Inga aktiviteter funna för",
+        "rightNow": "just nu."
+    },
+    "Activities": {
+        "title": "Alla aktiviteter",
+        "description": "Hitta alla språkrelaterade aktiviteter i",
+        "selectCity": "Välj stad:",
+        "searchPlaceholder": "Sök på aktiviteter...",
+        "searchError": "Kunde inte ladda aktiviteter. Försök igen senare.",
+        "noActivitiesFound": "Inga aktiviteter funna.",
+        "tryDifferentSearch": "Prova en annan sökterm.",
+        "loadingError": "Kunde inte ladda aktiviteter. Försök igen senare."
+    },
+    "ActivityCard": {
+        "location": "Plats"
     }
 }
