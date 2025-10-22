@@ -3,21 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --gray-light: #f3f4f6;
+  --gray-medium: #d1d5db;
+  --gray-dark: #4b5563;
+  --success: #10b981;
+  --error: #ef4444;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: bg-white ;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
@@ -31,13 +32,12 @@ body {
 .container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
+
 .section {
   @apply py-12 sm:py-16;
 }
 
-
-/* Navbar */
-
+/* Header */
 .header-wrapper {
   @apply sticky top-0 z-50 w-full bg-white shadow-md;
 }
@@ -51,32 +51,91 @@ body {
 }
 
 .lang-button {
-  @apply flex items-center space-x-2 text-xl font-bold text-gray-800 hover:opacity-80 transition;
+  @apply flex items-center space-x-2 text-xl font-bold text-gray-800 hover:opacity-80 transition cursor-pointer;
 }
 
 /* Typografi */
 .h1 {
   @apply text-4xl font-bold tracking-tight text-gray-900;
 }
+
 .h2 {
   @apply text-2xl font-semibold text-gray-800;
 }
+
+.h3 {
+  @apply text-xl font-semibold text-gray-800;
+}
+
 .body-text {
   @apply text-base leading-relaxed text-gray-700;
 }
 
+.body-text-sm {
+  @apply text-sm leading-relaxed text-gray-600;
+}
+
 /* Buttons */
 .btn {
-  @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-semibold transition-colors;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold transition-colors;
 }
+
 .btn.primary {
   @apply bg-blue-600 text-white hover:bg-blue-700;
 }
+
 .btn.secondary {
   @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+.btn.outline {
+  @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-50;
 }
 
 /* Cards */
 .card {
   @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition;
+}
+
+/* Activity Card specific */
+.activity-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition;
+}
+
+.activity-card-image {
+  @apply w-full h-48 object-cover;
+}
+
+.activity-card-content {
+  @apply p-4;
+}
+
+.activity-tag {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700;
+}
+
+/* Filter pills */
+.filter-pill {
+  @apply px-4 py-2 rounded-full font-medium transition-colors cursor-pointer;
+}
+
+.filter-pill.active {
+  @apply bg-blue-600 text-white;
+}
+
+.filter-pill.inactive {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+/* Loading / Error states */
+.loading-spinner {
+  @apply inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+}
+
+.error-banner {
+  @apply bg-red-50 border-l-4 border-red-500 p-4 rounded;
+}
+
+.error-text {
+  @apply text-red-700 font-medium;
 }

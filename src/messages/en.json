@@ -13,5 +13,16 @@
     "Home": {
         "welcome": "Welcome to Språkstugan",
         "description": "Here you learn Swedish in an easy way."
+    },
+    "Hero": {
+    "title": "Welcome to Language House",
+    "subtitle": "Learn Swedish in an easy and fun way. From basic words and phrases to daily conversations.",
+    "cta": "Start learning today",
+    "card1Title": "Learn new words",
+    "card1Description": "Build your vocabulary with interactive exercises and real examples.",
+    "card2Title": "Practice conversations",
+    "card2Description": "Practice practical situations you encounter in your daily life.",
+    "card3Title": "Quick progress",
+    "card3Description": "Short exercises that fit into your daily routine."
     }
 }

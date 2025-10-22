@@ -13,5 +13,16 @@
     "Home": {
         "welcome": "Välkommen till Språkstugan!",
         "description": "Här lär du dig svenska på ett enkelt sätt."
+    },
+    "Hero": {
+    "title": "Välkommen till Språkstugan",
+    "subtitle": "Lär dig svenska på ett enkelt och roligt sätt. Från grundläggande ord och fraser till dagliga konversationer.",
+    "cta": "Börja lära dig idag",
+    "card1Title": "Lär dig nya ord",
+    "card1Description": "Bygga upp ditt ordförråd med interaktiva övningar och verkliga exempel.",
+    "card2Title": "Träna samtal",
+    "card2Description": "Öva på praktiska situationer som du möter i din dagliga liv.",
+    "card3Title": "Snabb framgång",
+    "card3Description": "Korta övningar som passar in i din dagliga rutin."
     }
 }
