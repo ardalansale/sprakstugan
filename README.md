@@ -1,35 +1,41 @@
 # Språkstugan
 
 > 🇸🇪 **Svensk sammanfattning:**  
-> Språkstugan är en webbapp som hjälper nyanlända och språkinlärare att hitta språkrelaterade aktiviteter i sin stad. Fokus ligger på enkelhet, tillgänglighet och tydlig information.
+> Språkstugan är en mobilvänlig webbapp som hjälper personer att hitta språkrelaterade aktiviteter i sin stad. Målet är att göra det enklare att öva svenska, skapa kontakter och hitta relevant information utan att behöva leta på flera ställen.
 
 ## Overview
 
-Språkstugan is a simple web app that helps people learning Swedish find language-related activities in their city. The goal is to make it easy to discover events like language cafés, meetups, and conversation groups — all in one place.
+Språkstugan is a mobile-first web app designed to help people learning Swedish find language-related activities in their city. The goal is to support integration and social connection by gathering relevant events in one place.
 
-##  Features
+## Target Audience
+
+The app is built for a broad and diverse audience – from newly arrived individuals to international students and anyone interested in improving their Swedish. What they share is the motivation to learn the language, and that’s the need this app aims to support.
+
+## Current Features
 
 - Language support: Swedish and English
 - City filter: Choose between Stockholm and Uppsala
-- Activity cards: Show title, description, time, location, and link to Google Maps
+- Activity cards: Show title, description, time, location, and Google Maps link
 - Custom API: Built with `json-server` to manage activity data
-- Responsive design and accessibility-focused layout
-- Error handling for failed fetches and empty results
+- Mobile-first design based on user research
+- Basic error handling for failed fetches and empty results
+- Navigation: Custom logo and hamburger menu
 
-## Tech Stack
+## Planned Features
+
+- 📅 Calendar view to browse activities by date
+- 📍 Address-based filtering to show nearby events
+- 🧠 Filter by activity type (e.g. café, meetup, course)
+- 🔗 Organizer links and richer activity details
+- 🌍 More languages (e.g. Arabic, Somali, Tigrinya)
+
+## Technologies Used
 
 - Next.js (App Router)
 - Tailwind CSS
 - TypeScript
-- json-server (for local API)
-- Custom i18n hook with JSON-based translations
-
-## Future Plans
-
-- Add calendar view and address-based filtering
-- Filter by activity type (e.g. café, meetup, course)
-- Connect activity cards to organizer pages
-- Add more languages (e.g. Arabic, Somali, Tigrinya)
+- json-server
+- Custom i18n hook with modular JSON files
 
 ## Getting Started
 
