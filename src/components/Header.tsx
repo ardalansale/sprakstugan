@@ -32,7 +32,7 @@ const Header = () => {
                     </Link>
 
                     {/* HAMBURGER / CLOSE ICON */}
-                    <button onClick={toggleMenu} className="text-black">
+                    <button onClick={toggleMenu} className="text-black cursor-pointer">
                         {isMenuOpen ? <X size={42} /> : <Menu size={42} />}
                     </button>
                 </div>
