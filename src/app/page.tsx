@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import Hero from '@/components/Hero';
 import ActivityCard from '@/components/ActivityCard';
-import Link from 'next/link';
+// import Link from 'next/link';
 import svMessages from '@/locales/sv.json';
 import enMessages from '@/locales/en.json';
 
@@ -31,15 +31,27 @@ interface ActivityWithTranslations {
     price: string;
 }
 
+type ActivityTranslation = {
+    title: string;
+    category: string;
+    description: string;
+    price: string;
+};
+
+type CityActivityTranslations = Record<string, ActivityTranslation>;
+
 const CITIES = [
     { key: 'stockholm', label: 'Stockholm' },
     { key: 'uppsala', label: 'Uppsala' },
-];
+] as const;
+
+type CityKey = typeof CITIES[number]['key'];
+type MessagesShape = Partial<Record<CityKey, CityActivityTranslations>>;
 
 export default function HomePage() {
     const t = useTranslation();
     const [activities, setActivities] = useState<Record<string, ActivityWithTranslations[]>>({});
-    const [selectedCity, setSelectedCity] = useState('stockholm');
+    const [selectedCity, setSelectedCity] = useState<CityKey>('stockholm');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -58,17 +70,20 @@ export default function HomePage() {
 
                 // Detektera språk baserat på useTranslation hook
                 const isSwedish = t?.Header?.openMenu === 'Öppna meny';
-                const messages = isSwedish ? svMessages : enMessages;
+                const rawMessages = isSwedish ? svMessages : enMessages;
+
+                // Typa endast stadsdelen av messages
+                const messages = rawMessages as MessagesShape;
 
                 // Lägg till översättningar till aktiviteterna
                 const activitiesWithTranslations: Record<string, ActivityWithTranslations[]> = {};
 
                 for (const [city, cityActivities] of Object.entries(rawActivities)) {
+                    const cityData = messages[city as CityKey] ?? {};
+
                     activitiesWithTranslations[city] = (cityActivities as Activity[]).map((activity) => {
-                        // Hämta city-baserad data från messages
-                        const cityData = (messages as any)[city];
                         const activityKey = `activity${activity.id}`;
-                        const translation = cityData?.[activityKey];
+                        const translation = cityData[activityKey];
 
                         if (!translation) {
                             console.warn(`Missing translation for ${city}/${activityKey}`);
