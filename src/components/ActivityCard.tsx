@@ -13,10 +13,10 @@ interface ActivityCardProps {
     locationUrl: string;
     image: string;
     date: string;
-    price: string;
+    price?: string;
 }
 
-// Map kategorier till färger
+// Kategori-färger
 const categoryColorMap: Record<string, { bg: string; text: string; border: string }> = {
     'Språkcafé': {
         bg: 'bg-blue-100',
@@ -60,7 +60,7 @@ const categoryColorMap: Record<string, { bg: string; text: string; border: strin
     },
 };
 
-// Fallback färg om kategorin inte finns i mappen
+// Fallback färg om kategorin inte finns
 const defaultColor = {
     bg: 'bg-gray-100',
     text: 'text-gray-700',
@@ -76,7 +76,7 @@ export default function ActivityCard({
     locationUrl,
     image,
     date,
-    price,
+    price = 'Pris saknas',
 }: ActivityCardProps) {
     const colors = categoryColorMap[category] || defaultColor;
 

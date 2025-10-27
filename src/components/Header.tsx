@@ -22,12 +22,11 @@ const Header = () => {
     };
 
     return (
-        // ====== HEADER WRAPPER ======
         <header className="header-wrapper">
             <div className="container py-4">
-                {/* ====== NAVBAR (logo + hamburgare) ====== */}
+                {/* NAVBAR */}
                 <div className="flex items-center justify-between relative z-[60]">
-    {/* LOGO */}
+                    {/* LOGO */}
                     <Link href="/" className="flex items-center space-x-2">
                         <Logo className="w-24 h-auto text-blue-600" />
                     </Link>
@@ -38,13 +37,12 @@ const Header = () => {
                     </button>
                 </div>
 
-                {/* ====== SLIDE-IN MENU ====== */}
+                {/* SLIDE-IN MENY */}
                 <div
                     className={`${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} mobile-menu`}
                 >
-                    {/* MENY-INNEHÅLL CENTRERAT */}
                     <div className="p-6 flex flex-col items-center justify-center h-full">
-                        {/* ====== NAVIGATIONSLÄNKAR ====== */}
+                        {/* NAVIGATIONSLÄNKAR  */}
                         <nav className="flex flex-col space-y-6 items-center text-center">
                             <Link href="/" className="nav-link" onClick={closeMenu}>
                                 {t.Header.landingPage}
@@ -65,7 +63,7 @@ const Header = () => {
                                 {t.Header.careers}
                             </Link>
 
-                            {/* ====== SPRÅKVAL MED FLAGGOR ====== */}
+                            {/* SPRÅKVAL */}
                             <div className="pt-4 border-t border-gray-200 text-black w-full">
                                 <p className="text-2xl font-bold mb-4">
                                     {t.Header.changeLanguage}
