@@ -53,10 +53,10 @@ const categoryColorMap: Record<string, { bg: string; text: string; border: strin
         text: 'text-purple-700',
         border: 'border-purple-300',
     },
-    'Exchange': {
-        bg: 'bg-orange-100',
-        text: 'text-orange-700',
-        border: 'border-orange-300',
+    'Meet Up': {
+        bg: 'bg-pink-100',
+        text: 'text-pink-700',
+        border: 'border-pink-300',
     },
 };
 

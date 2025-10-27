@@ -63,7 +63,7 @@
 
         },
         "activity4": {
-            "title": "Konversationsgrupp Stockholm",
+            "title": "Konversationsgrupp",
             "category": "Konversation",
             "description": "Öva på att prata svenska i en vänlig grupp. Alla nivåer välkomna!",
             "price": "Gratis"
@@ -72,14 +72,14 @@
     },
     "uppsala": {
         "activity2": {
-            "title": "Svenska möte - Uppsala",
+            "title": "Nystartsmöte",
             "category": "Möte",
             "description": "Informell träff för språkinlärare. Vi diskuterar dagliga situationer och lär oss tillsammans.",
             "price": "Gratis"
 
         },
         "activity3": {
-            "title": "Språkträff Uppsala",
+            "title": "Språkträff Storken",
             "category": "Träff",
             "description": "Rolig språkträff med aktiviteter och spel. Perfekt för att öva och ha kul samtidigt!",
             "price": "Gratis"

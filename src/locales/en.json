@@ -71,14 +71,14 @@
     },
     "uppsala": {
         "activity2": {
-            "title": "Swedish Meeting - Uppsala",
+            "title": "Upstart Meeting",
             "category": "Meeting",
             "description": "Informal meetup for language learners. We discuss daily situations and learn together.",
             "price": "Free"
         },
         "activity3": {
-            "title": "Language Exchange Uppsala",
-            "category": "Exchange",
+            "title": "Language Exchange Storken",
+            "category": "Meet Up",
             "description": "Fun language meetup with activities and games. Perfect for practicing and having fun!",
             "price": "Free"
         }

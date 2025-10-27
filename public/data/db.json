@@ -5,20 +5,20 @@
             "titleKey": "stockholm.activity1.title",
             "categoryKey": "stockholm.activity1.category",
             "descriptionKey": "stockholm.activity1.description",
-            "location": "Hornstull Bibliotek",
-            "locationUrl": "https://maps.google.com/?q=Hornstull+Bibliotek+Stockholm",
+            "location": "Hornstulls Bibliotek",
+            "locationUrl": "https://maps.app.goo.gl/Xf4sLDyrRv92HMhg8",
             "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=300&fit=crop",
-            "date": "24 okt, 14:00"
+            "date": "24 okt, 14:00 - 15:30"
         },
         {
             "id": 4,
             "titleKey": "stockholm.activity4.title",
             "categoryKey": "stockholm.activity4.category",
             "descriptionKey": "stockholm.activity4.description",
-            "location": "Stureplan Café",
-            "locationUrl": "https://maps.google.com/?q=Stureplan+Stockholm",
+            "location": "Fern & Fika",
+            "locationUrl": "https://maps.app.goo.gl/3vkZdSyc2fVrPX9YA",
             "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=300&fit=crop",
-            "date": "27 okt, 15:00"
+            "date": "27 okt, 15:00 - 17:00"
         }
     ],
     "uppsala": [
@@ -27,20 +27,20 @@
             "titleKey": "uppsala.activity2.title",
             "categoryKey": "uppsala.activity2.category",
             "descriptionKey": "uppsala.activity2.description",
-            "location": "Uppsala Bibliotek",
-            "locationUrl": "https://maps.google.com/?q=Uppsala+Bibliotek",
-            "image": "https://images.unsplash.com/photo-1543269865-cbdf26effbad?w=500&h=300&fit=crop",
-            "date": "25 okt, 18:00"
+            "location": "Stadsbiblioteket",
+            "locationUrl": "https://maps.app.goo.gl/6b86DBQ5Lt6fEktk8",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+            "date": "25 okt, 18:00 - 18:30"
         },
         {
             "id": 3,
             "titleKey": "uppsala.activity3.title",
             "categoryKey": "uppsala.activity3.category",
             "descriptionKey": "uppsala.activity3.description",
-            "location": "Uppsala Stadsbibliotek",
-            "locationUrl": "https://maps.google.com/?q=Uppsala+Stadsbibliotek",
+            "location": "Kafferummet Storken",
+            "locationUrl": "https://maps.app.goo.gl/4fmot7FVG3t7Yzok7",
             "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
-            "date": "26 okt, 19:00"
+            "date": "26 okt, 19:00 - 19:45"
         }
     ]
 }
