@@ -1,4 +1,6 @@
 import { Users, Heart, Target } from 'lucide-react';
+import Link from 'next/link';
+
 
 export default function AboutPage() {
   return (
@@ -97,12 +99,12 @@ export default function AboutPage() {
           <p className="text-lg text-gray-700 mb-6">
             Kom och deltag i en av våra aktiviteter och blir del av Språkstugan-communityn!
           </p>
-          <a
+          <Link
             href="/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
           >
             Se alla aktiviteter
-          </a>
+          </Link>
         </div>
       </section>
     </main>
