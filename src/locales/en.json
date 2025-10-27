@@ -12,11 +12,11 @@
     },
     "Hero": {
         "title": "Welcome to Språkstugan",
-        "subtitle": "Learn Swedish in an easy and fun way. From basic words and phrases to daily conversations."
+        "subtitle": "Find language cafés, meetups and activities where you can practice Swedish, connect with others and get support in everyday life. We gather places where you can learn together, share experiences and build new relationships."
     },
     "Home": {
         "weeklyActivities": "Weekly activities in",
-        "weeklyDescription": "Meet others learning Swedish",
+        "weeklyDescription": "Join events where you can learn Swedish and meet new people",
         "seeAllActivities": "See all activities",
         "noActivities": "No activities found for",
         "rightNow": "right now."

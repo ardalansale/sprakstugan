@@ -151,11 +151,11 @@ export default function HomePage() {
                                         ))}
                                     </div>
 
-                                    <div className="text-center">
+                                    {/* <div className="text-center">
                                         <Link href="/aktiviteter" className="btn primary">
                                             {t.Home?.seeAllActivities || 'Se alla aktiviteter'}
                                         </Link>
-                                    </div>
+                                    </div> */}
                                 </>
                             ) : (
                                 <div className="text-center py-12">

@@ -12,11 +12,11 @@
     },
     "Hero": {
         "title": "Välkommen till Språkstugan",
-        "subtitle": "Lär dig svenska på ett enkelt och roligt sätt. Från grundläggande ord och fraser till dagliga konversationer."
+        "subtitle": "Hitta språkcaféer, träffar och aktiviteter där du kan öva svenska, träffa andra och få stöd i vardagen. Här samlar vi mötesplatser där du kan lära dig tillsammans med andra, utbyta erfarenheter och bygga nya relationer."
     },
     "Home": {
         "weeklyActivities": "Veckans aktiviteter i",
-        "weeklyDescription": "Träffa andra som lär sig svenska",
+        "weeklyDescription": "Gå på aktiviteter där du kan lära dig svenska och träffa nya människor",
         "seeAllActivities": "Se alla aktiviteter",
         "noActivities": "Inga aktiviteter funna för",
         "rightNow": "just nu."

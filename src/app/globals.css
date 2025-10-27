@@ -55,23 +55,23 @@ body {
 
 /* Typografi */
 .h1 {
-  @apply text-4xl font-bold tracking-tight text-gray-900;
+  @apply text-4xl font-bold tracking-tight;
 }
 
 .h2 {
-  @apply text-2xl font-semibold text-gray-800;
+  @apply text-2xl font-semibold;
 }
 
 .h3 {
-  @apply text-xl font-semibold text-gray-800;
+  @apply text-xl font-semibold;
 }
 
 .body-text {
-  @apply text-base leading-relaxed text-gray-700;
+  @apply text-base leading-relaxed ;
 }
 
 .body-text-sm {
-  @apply text-sm leading-relaxed text-gray-600;
+  @apply text-sm leading-relaxed;
 }
 
 /* Buttons */

@@ -41,7 +41,7 @@ The app is built for a broad and diverse audience – from newly arrived individ
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/sprakstugan.git
+git clone https://github.com/ardalansale/sprakstugan.git
 
 # Install dependencies
 npm install
