@@ -51,3 +51,8 @@ npm run dev
 
 # Start json-server (in a separate terminal)
 npx json-server --watch public/data/db.json --port 3001
+```
+
+## Link
+
+https://sprakstugan.netlify.app
