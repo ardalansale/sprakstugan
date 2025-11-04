@@ -23,11 +23,11 @@ The app is built for a broad and diverse audience – from newly arrived individ
 
 ## Planned Features
 
-- 📅 Calendar view to browse activities by date
-- 📍 Address-based filtering to show nearby events
-- 🧠 Filter by activity type (e.g. café, meetup, course)
-- 🔗 Organizer links and richer activity details
-- 🌍 More languages (e.g. Arabic, Somali, Tigrinya)
+- Calendar view to browse activities by date
+- Address-based filtering to show nearby events
+- Filter by activity type (e.g. café, meetup, course)
+- Organizer links and richer activity details
+- More languages (e.g. Arabic, Somali, Tigrinya)
 
 ## Technologies Used
 
